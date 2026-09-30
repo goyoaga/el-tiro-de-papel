@@ -6,7 +6,7 @@ const ctx = canvas.getContext?.('2d');
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 const ui = { ready: $('ready'), result: $('result'), repeat: $('repeat'), feedback: $('feedback'),
   hint: $('stage-hint'), round: $('round-label'), title: $('result-title'), copy: $('result-copy'),
-  kicker: $('result-kicker'), streak: $('streak'), best: $('best'), angle: $('angle'), force: $('force'),
+  kicker: $('result-kicker'), streak: $('streak'), best: $('best'),
   sound: $('sound'), bookmark: $('bookmark'), dialog: $('bookmark-dialog') };
 
 let best = 0;
@@ -296,7 +296,7 @@ function nextRound() {
   round++; phase = 'ready'; gesture = null; result = null;
   ui.round.textContent = `TIRO ${String(round).padStart(2,'0')}`;
   ui.ready.hidden = false; ui.result.hidden = true;
-  ui.feedback.textContent = 'La papelera se queda quieta durante el tiro.';
+  ui.feedback.textContent = 'Apunta con un solo gesto.';
   ui.hint.textContent = 'DESLIZA LA BOLA HACIA LA PAPELERA';
   render(performance.now());
 }
@@ -333,14 +333,6 @@ if (!ctx) {
     render(performance.now());
   });
   ui.repeat.addEventListener('click', nextRound);
-  for (const name of ['angle', 'force']) {
-    ui[name].addEventListener('input', () => { $(name + '-value').textContent = ui[name].value + (name === 'angle' ? '°' : ''); });
-  }
-  $('keyboard-launch').addEventListener('click', () => {
-    const angle = Number(ui.angle.value) * Math.PI / 180;
-    const force = Number(ui.force.value);
-    launch(force * Math.cos(angle), -force * Math.sin(angle));
-  });
   window.addEventListener('resize', resize);
   nextRound(); resize();
 }
