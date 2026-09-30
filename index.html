@@ -14,7 +14,7 @@
 <body>
   <div class="app">
     <header class="topbar">
-      <span class="brand"><span aria-hidden="true" class="brand-mark"><svg viewBox="0 0 24 24"><path d="M5 19 19 5M9 5h10v10" /></svg></span> UNA-MAS-GAMES <small>· PROTOTIPO JUGABLE</small></span>
+      <span class="brand"><span aria-hidden="true" class="brand-mark"><svg viewBox="0 0 24 24"><path d="M5 19 19 5M9 5h10v10" /></svg></span> UNA-MAS-GAMES</span>
       <div class="top-actions">
         <button id="bookmark" class="small-button" type="button" aria-label="Cómo guardar en favoritos">☆ <span>FAVORITOS</span></button>
         <button id="sound" class="small-button" type="button" aria-label="Activar sonido" aria-pressed="false"><svg class="speaker" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4Z" /><path class="mute-line" d="m17 9 5 6m0-6-5 6" /><path class="sound-wave" d="M17 8c2.4 2.2 2.4 5.8 0 8" /></svg><span id="sound-label">OFF</span></button>
@@ -38,18 +38,12 @@
         <div class="stage-foot"><span id="stage-hint">DESLIZA LA BOLA HACIA LA PAPELERA</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M9 5h10v10" /></svg></div>
       </section>
 
-      <aside class="panel" aria-label="Control y resultado">
+      <aside class="panel" aria-label="Instrucciones y resultado">
         <div class="panel-label">EL RETO</div>
         <div id="ready" class="panel-view">
           <h2>Un tiro.<br />Tu decisión.</h2>
-          <p>Comienza sobre la bola. La flecha te muestra la dirección y la fuerza; al soltar, la lanzas.</p>
-          <p class="microcopy" id="feedback" role="status" aria-live="polite">La papelera se queda quieta durante el tiro.</p>
-          <details class="keyboard">
-            <summary>Jugar sin arrastrar</summary>
-            <label>Ángulo <output id="angle-value">42°</output><input id="angle" type="range" min="20" max="75" value="42" /></label>
-            <label>Fuerza <output id="force-value">455</output><input id="force" type="range" min="150" max="720" value="455" /></label>
-            <button id="keyboard-launch" type="button" class="secondary-button">LANZAR ↗</button>
-          </details>
+          <p>Desliza desde la bola hacia arriba y a la derecha. La flecha indica cómo saldrá; al soltar, la lanzas.</p>
+          <p class="microcopy" id="feedback" role="status" aria-live="polite">Apunta con un solo gesto.</p>
         </div>
         <div id="result" class="panel-view result" hidden aria-live="polite">
           <p class="result-kicker" id="result-kicker">RESULTADO</p>
