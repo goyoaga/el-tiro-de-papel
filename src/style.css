@@ -10,7 +10,6 @@ button:focus-visible, a:focus-visible, summary:focus-visible, input:focus-visibl
 .app { min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; }
 .topbar { min-height: 76px; padding: 12px clamp(22px,4vw,65px); display: flex; justify-content: space-between; align-items: center; gap: 12px; border-bottom: 1px solid #c9c9bf; background: #ece9e1; }
 .brand { display: inline-flex; align-items: center; gap: 11px; font-size: 11px; font-weight: 800; letter-spacing: .14em; white-space: nowrap; }
-.brand small { color: #858f87; font-size: 9px; letter-spacing: .07em; }
 .brand-mark { display: inline-grid; place-items: center; width: 29px; height: 29px; background: #175c5d; color: #f7f3e9; font-size: 20px; border-radius: 4px; letter-spacing: 0; }
 .brand-mark svg, .stage-foot svg, .primary-button svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
 .brand-mark svg { width: 17px; height: 17px; }
@@ -45,13 +44,6 @@ h1 span { color: #b35745; }
 .panel-view h2 { font-size: clamp(42px,3.5vw,61px); line-height: 1.05; margin: 0 0 20px; }
 .panel-view p { color: #64796f; font-size: 15px; line-height: 1.6; max-width: 370px; }
 .panel-view .microcopy { color: #ac5d49; font-size: 12px; min-height: 38px; }
-.keyboard { border-top: 1px solid #c1c9bf; padding-top: 17px; margin-top: 24px; }
-.keyboard summary { color: #325b55; font-weight: 800; font-size: 12px; cursor: pointer; }
-.keyboard label { display: flex; align-items: center; flex-wrap: wrap; gap: 9px; margin-top: 16px; color: #526960; font-size: 12px; }
-.keyboard output { margin-left: auto; color: #a75543; font-weight: 800; }
-.keyboard input { width: 100%; accent-color: #175c5d; min-height: 28px; }
-.secondary-button { width: 100%; min-height: 52px; margin-top: 17px; border: 1px solid #175c5d; background: transparent; color: #175c5d; font-weight: 800; font-size: 12px; letter-spacing: .12em; }
-.secondary-button:hover { background: #dce9e1; }
 .panel-foot { display: flex; justify-content: space-between; gap: 10px; border-top: 1px solid #bfc3b8; margin-top: auto; padding-top: 20px; color: #89928a; font-size: 9px; }
 .result { padding-top: 45px; }
 .result-kicker { color: #ac604d !important; margin: 0 0 12px; }
@@ -84,7 +76,6 @@ dialog .primary-button { min-height: 54px; margin-top: 25px; }
   .topbar { min-height: 56px; padding: 8px 16px; }
   .brand { font-size: 9px; letter-spacing: .08em; gap: 7px; }
   .brand-mark { width: 26px; height: 26px; }
-  .brand small { display: none; }
   .small-button { min-height: 38px; padding: 5px 9px; }
   .small-button:first-child { width: 40px; justify-content: center; }
   .small-button:first-child span { display: none; }
@@ -105,11 +96,6 @@ dialog .primary-button { min-height: 54px; margin-top: 25px; }
   .panel-view h2 { display: none; }
   .panel-view p { margin: 0 0 6px; font-size: 12px; line-height: 1.35; }
   .panel-view .microcopy { font-size: 11px; min-height: 0; }
-  .keyboard { margin-top: 9px; padding-top: 8px; }
-  .keyboard:not([open]) { border-top: 0; }
-  .keyboard summary { font-size: 11px; }
-  .keyboard label { margin-top: 8px; }
-  .secondary-button { min-height: 42px; margin-top: 8px; }
   .result h2 { display: block; font-size: 31px; margin: 0 0 4px; }
   .result .result-kicker { margin: 0 0 4px; font-size: 9px; }
   .result-copy { min-height: 0; }
