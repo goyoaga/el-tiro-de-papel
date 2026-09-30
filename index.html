@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#efece4" />
+  <meta name="description" content="Una bola de papel, una papelera y un solo tiro. Un minijuego para la pausa del café." />
+  <title>El tiro de papel · UNA-MAS-GAMES</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./src/style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <span class="brand"><span aria-hidden="true" class="brand-mark">↗</span> UNA-MAS-GAMES <small>· PROTOTIPO JUGABLE</small></span>
+      <div class="top-actions">
+        <button id="bookmark" class="small-button" type="button" aria-label="Cómo guardar en favoritos">☆ <span>FAVORITOS</span></button>
+        <button id="sound" class="small-button" type="button" aria-label="Activar sonido" aria-pressed="false">🔇 <span>OFF</span></button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="intro" aria-labelledby="title">
+        <p class="eyebrow">UNA BOLA · UN TIRO</p>
+        <h1 id="title">El tiro<br />de papel<span>.</span></h1>
+        <p class="intro-copy">Una pausa de oficina. Arruga, apunta y prueba si la bola entra en la papelera.</p>
+        <div class="intro-rule"><span>01</span> Desliza desde la bola hacia arriba y a la derecha.<br /><span>02</span> Cuanto más largo el gesto, más fuerte el tiro.</div>
+      </section>
+
+      <section class="stage-section" aria-label="Escena del lanzamiento">
+        <div class="stage-top"><span>OFICINA · 01</span><span id="round-label">TIRO 01</span></div>
+        <div id="stage" class="stage">
+          <canvas id="scene" role="img" aria-label="Una bola de papel a la izquierda y una papelera abierta a la derecha. Desliza desde la bola para lanzar."></canvas>
+          <div id="canvas-error" class="canvas-error" hidden>Este navegador no puede mostrar el juego. Prueba con una versión reciente.</div>
+        </div>
+        <div class="stage-foot"><span id="stage-hint">DESLIZA LA BOLA HACIA LA PAPELERA</span><span aria-hidden="true">↗</span></div>
+      </section>
+
+      <aside class="panel" aria-label="Control y resultado">
+        <div class="panel-label">EL RETO</div>
+        <div id="ready" class="panel-view">
+          <h2>Un tiro.<br />Tu decisión.</h2>
+          <p>Comienza sobre la bola. La flecha te muestra la dirección y la fuerza; al soltar, la lanzas.</p>
+          <p class="microcopy" id="feedback" role="status" aria-live="polite">La papelera se queda quieta durante el tiro.</p>
+          <details class="keyboard">
+            <summary>Jugar sin arrastrar</summary>
+            <label>Ángulo <output id="angle-value">42°</output><input id="angle" type="range" min="20" max="75" value="42" /></label>
+            <label>Fuerza <output id="force-value">455</output><input id="force" type="range" min="150" max="720" value="455" /></label>
+            <button id="keyboard-launch" type="button" class="secondary-button">LANZAR ↗</button>
+          </details>
+        </div>
+        <div id="result" class="panel-view result" hidden aria-live="polite">
+          <p class="result-kicker" id="result-kicker">RESULTADO</p>
+          <h2 id="result-title">—</h2>
+          <p id="result-copy" class="result-copy">—</p>
+          <div class="score"><div><span>RACHA ACTUAL</span><strong id="streak">0</strong></div><div><span>MEJOR RACHA</span><strong id="best">0</strong></div></div>
+          <button id="repeat" class="primary-button" type="button">OTRA BOLA <span aria-hidden="true">↗</span></button>
+          <a class="coffee" href="https://ko-fi.com/arielgoyoaga" target="_blank" rel="noopener noreferrer">¿TE DIVERTISTE? INVÍTAME UN CAFÉ ☕ ↗</a>
+        </div>
+        <div class="panel-foot">PARA ESA PAUSA DE CAFÉ <span>© 2026</span></div>
+      </aside>
+    </main>
+  </div>
+  <dialog id="bookmark-dialog"><form method="dialog"><h2>Guarda el juego</h2><p id="bookmark-help"></p><button class="primary-button" type="submit">ENTENDIDO ↗</button></form></dialog>
+  <script type="module" src="./src/main.js"></script>
+  <script data-goatcounter="https://eltirodepapel.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
