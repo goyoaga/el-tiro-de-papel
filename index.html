@@ -14,17 +14,17 @@
 <body>
   <div class="app">
     <header class="topbar">
-      <span class="brand"><span aria-hidden="true" class="brand-mark">↗</span> UNA-MAS-GAMES <small>· PROTOTIPO JUGABLE</small></span>
+      <span class="brand"><span aria-hidden="true" class="brand-mark"><svg viewBox="0 0 24 24"><path d="M5 19 19 5M9 5h10v10" /></svg></span> UNA-MAS-GAMES <small>· PROTOTIPO JUGABLE</small></span>
       <div class="top-actions">
         <button id="bookmark" class="small-button" type="button" aria-label="Cómo guardar en favoritos">☆ <span>FAVORITOS</span></button>
-        <button id="sound" class="small-button" type="button" aria-label="Activar sonido" aria-pressed="false">🔇 <span>OFF</span></button>
+        <button id="sound" class="small-button" type="button" aria-label="Activar sonido" aria-pressed="false"><svg class="speaker" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4Z" /><path class="mute-line" d="m17 9 5 6m0-6-5 6" /><path class="sound-wave" d="M17 8c2.4 2.2 2.4 5.8 0 8" /></svg><span id="sound-label">OFF</span></button>
       </div>
     </header>
 
     <main class="layout">
       <section class="intro" aria-labelledby="title">
         <p class="eyebrow">UNA BOLA · UN TIRO</p>
-        <h1 id="title">El tiro<br />de papel<span>.</span></h1>
+        <h1 id="title">El tiro<br /> de papel<span>.</span></h1>
         <p class="intro-copy">Una pausa de oficina. Arruga, apunta y prueba si la bola entra en la papelera.</p>
         <div class="intro-rule"><span>01</span> Desliza desde la bola hacia arriba y a la derecha.<br /><span>02</span> Cuanto más largo el gesto, más fuerte el tiro.</div>
       </section>
@@ -35,7 +35,7 @@
           <canvas id="scene" role="img" aria-label="Una bola de papel a la izquierda y una papelera abierta a la derecha. Desliza desde la bola para lanzar."></canvas>
           <div id="canvas-error" class="canvas-error" hidden>Este navegador no puede mostrar el juego. Prueba con una versión reciente.</div>
         </div>
-        <div class="stage-foot"><span id="stage-hint">DESLIZA LA BOLA HACIA LA PAPELERA</span><span aria-hidden="true">↗</span></div>
+        <div class="stage-foot"><span id="stage-hint">DESLIZA LA BOLA HACIA LA PAPELERA</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M9 5h10v10" /></svg></div>
       </section>
 
       <aside class="panel" aria-label="Control y resultado">
@@ -56,7 +56,7 @@
           <h2 id="result-title">—</h2>
           <p id="result-copy" class="result-copy">—</p>
           <div class="score"><div><span>RACHA ACTUAL</span><strong id="streak">0</strong></div><div><span>MEJOR RACHA</span><strong id="best">0</strong></div></div>
-          <button id="repeat" class="primary-button" type="button">OTRA BOLA <span aria-hidden="true">↗</span></button>
+          <button id="repeat" class="primary-button" type="button">OTRA BOLA <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M9 5h10v10" /></svg></button>
           <a class="coffee" href="https://ko-fi.com/arielgoyoaga" target="_blank" rel="noopener noreferrer">¿TE DIVERTISTE? INVÍTAME UN CAFÉ ☕ ↗</a>
         </div>
         <div class="panel-foot">PARA ESA PAUSA DE CAFÉ <span>© 2026</span></div>
