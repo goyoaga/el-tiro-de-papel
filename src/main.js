@@ -52,6 +52,51 @@ function drawBackground() {
   ctx.fillStyle = desk; ctx.fillRect(0, SCENE.floor + 6, SCENE.width, SCENE.height - SCENE.floor - 6);
   ctx.fillStyle = 'rgba(94,64,45,.15)'; ctx.fillRect(0, SCENE.floor + 4, SCENE.width, 3);
   ctx.fillStyle = 'rgba(113,76,53,.08)'; ctx.fillRect(0, SCENE.floor + 50, SCENE.width, 2);
+  // Ventanal: añade profundidad al fondo sin competir con la trayectoria.
+  ctx.save();
+  const wx = 410, wy = 42, ww = 310, wh = 170;
+  ctx.fillStyle = 'rgba(255,255,255,.38)';
+  ctx.strokeStyle = 'rgba(67,91,83,.22)';
+  ctx.lineWidth = 5;
+  ctx.fillRect(wx, wy, ww, wh);
+  ctx.strokeRect(wx, wy, ww, wh);
+
+  const panes = 3, gap = 7, pad = 9;
+  const pw = (ww - pad * 2 - gap * (panes - 1)) / panes;
+  for (let i = 0; i < panes; i++) {
+    const x = wx + pad + i * (pw + gap);
+    const y = wy + pad, h = wh - pad * 2;
+    const sky = ctx.createLinearGradient(0, y, 0, y + h);
+    sky.addColorStop(0, '#bfd9e5');
+    sky.addColorStop(.58, '#e3e9df');
+    sky.addColorStop(.59, '#aec9c1');
+    sky.addColorStop(1, '#87aaa0');
+    ctx.fillStyle = sky;
+    ctx.fillRect(x, y, pw, h);
+
+    ctx.fillStyle = 'rgba(83,120,104,.34)';
+    ctx.beginPath();
+    ctx.moveTo(x, y + h * .72);
+    ctx.lineTo(x + pw * .28, y + h * .50);
+    ctx.lineTo(x + pw * .53, y + h * .67);
+    ctx.lineTo(x + pw * .77, y + h * .43);
+    ctx.lineTo(x + pw, y + h * .64);
+    ctx.lineTo(x + pw, y + h);
+    ctx.lineTo(x, y + h);
+    ctx.closePath();
+    ctx.fill();
+
+    ctx.fillStyle = 'rgba(255,255,255,.18)';
+    ctx.beginPath();
+    ctx.moveTo(x + 5, y + 4);
+    ctx.lineTo(x + pw * .42, y + 4);
+    ctx.lineTo(x + pw * .12, y + h);
+    ctx.lineTo(x, y + h);
+    ctx.closePath();
+    ctx.fill();
+  }
+  ctx.restore();
+
   // Una nota tenue sitúa la escena en una oficina sin competir con el lanzamiento.
   ctx.save(); ctx.translate(68, 175); ctx.rotate(-.04);
   ctx.fillStyle = 'rgba(102,118,102,.09)'; rounded(0, 0, 125, 87, 5); ctx.fill();
