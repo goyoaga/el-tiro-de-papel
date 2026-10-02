@@ -98,7 +98,8 @@ dialog .primary-button { min-height: 54px; margin-top: 25px; }
   .stage-top, .stage-foot { padding: 7px 16px; font-size: 8px; min-height: 28px; align-items: center; }
   .stage-foot svg { width: 15px; height: 15px; }
   .panel { min-height: 0; border-left: 0; border-top: 1px solid #c9c9bf; padding: 9px 16px max(14px,env(safe-area-inset-bottom)); }
-  .panel-label, .panel-foot { display: none; }
+  .panel-label { display: none; }
+  .panel-foot { display: flex; margin-top: 10px; padding-top: 9px; font-size: 8px; align-items: center; }
   .panel-view, .result { padding: 0; }
   .panel-view h2 { display: none; }
   .panel-view p { margin: 0 0 6px; font-size: 12px; line-height: 1.35; }
